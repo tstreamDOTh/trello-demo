@@ -6,7 +6,14 @@ const Board = ({ lists, cards }) => (
   <div className='board-container'>
     {lists.map(list => {
       const filteredCards = cards.filter(card => card.listID === list.listID);
-      return <List text={list.text} cards={filteredCards} />;
+      return (
+        <List
+          text={list.text}
+          cards={filteredCards}
+          key={list.listID}
+          listID={list.listID}
+        />
+      );
     })}
   </div>
 );
