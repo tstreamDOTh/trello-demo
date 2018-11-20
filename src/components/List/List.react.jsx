@@ -6,7 +6,7 @@ const List = ({ text, cards, listID }) => (
   <div className='card-list-container'>
     {text}
     {cards.map(card => (
-      <Card text={card.text} key={card.id} />
+      <Card text={card.text} id={card.id} key={card.id} />
     ))}
 
     <AddCard listID={listID} />
