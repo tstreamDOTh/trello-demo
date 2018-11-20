@@ -1,25 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Board from './components/Board/Board.react';
+import { render } from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './reducers';
+
+const cards = [
+  { text: 'card1', listID: '1' },
+  { text: 'card2', listID: '1' },
+  { text: 'card3', listID: '1' },
+  { text: 'card4', listID: '2' },
+  { text: 'card5', listID: '2' },
+  { text: 'card6', listID: '2' },
+  { text: 'card7', listID: '2' },
+  { text: 'card8', listID: '3' },
+  { text: 'card9', listID: '3' }
+];
+
+const lists = [
+  { text: 'list1', listID: '1' },
+  { text: 'list2', listID: '2' },
+  { text: 'list3', listID: '3' }
+];
+
+const store = createStore(rootReducer);
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Board cards={cards} lists={lists} cards={cards} />
       </div>
     );
   }

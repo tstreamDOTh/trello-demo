@@ -1,0 +1,13 @@
+.card {
+  background-color: rgb(255, 144, 174);
+  height: 60px;
+  width: auto;
+  margin-top: 8px;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.card-text {
+  padding: 4px;
+  color: white;
+}
