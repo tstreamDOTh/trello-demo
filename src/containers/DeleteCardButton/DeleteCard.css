@@ -1,0 +1,17 @@
+.delete-card-bttn {
+  opacity: 0.2;
+  float: right;
+  margin: 4px;
+  border: none;
+  border-radius: 2px;
+  padding: 4px;
+  background-color: rgba(4, 4, 4, 0.18);
+  color: white;
+  font-weight: bold;
+  transition: opacity 200ms;
+}
+
+.delete-card-bttn:hover {
+  opacity: 1;
+  transition: opacity 200ms;
+}

@@ -1,12 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateCard } from '../actions/index';
+import { updateCard } from '../../actions/index';
+
+import './UpdateCard.css';
+
 const UpdateCard = ({ dispatch, id }) => {
   let input;
 
   return (
     <div>
       <form
+        className='update-card'
         onSubmit={e => {
           e.preventDefault();
           if (!input.value.trim()) {
@@ -16,8 +20,8 @@ const UpdateCard = ({ dispatch, id }) => {
           input.value = '';
         }}
       >
-        <input ref={node => (input = node)} />
-        <button type='submit'>Update Card</button>
+        <input className='input-box' ref={node => (input = node)} />
+        <button className='update-bttn'>Update Card</button>
       </form>
     </div>
   );
