@@ -3,8 +3,8 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 import BoardContainer from './containers/BoardContainer';
-import AddList from './containers/AddList';
 import './App.css';
+import AddList from './containers/AddListSection/AddList';
 
 const store = createStore(
   rootReducer,

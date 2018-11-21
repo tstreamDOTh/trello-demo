@@ -1,13 +1,14 @@
 import React from 'react';
 import './Card.css';
-import DeleteCard from '../../containers/DeleteCardButton/DeleteCard';
-import UpdateCard from '../../containers/UpdateCardSection/UpdateCard';
+import CardSettings from '../CardSettings/CardSettings';
+import CardActionInjector from '../../containers/CardActionInjector';
+
+const StoreActionInjectedCardSettings = CardActionInjector(CardSettings);
 
 const Card = ({ text, id }) => (
   <div className='card'>
-    <DeleteCard id={id} />
     <p className='card-text'>{text}</p>
-    <UpdateCard id={id} />
+    <StoreActionInjectedCardSettings id={id} />
   </div>
 );
 

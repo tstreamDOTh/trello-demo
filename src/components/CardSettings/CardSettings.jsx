@@ -1,14 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { updateCard } from '../../actions/index';
+import CardActionInjector from '../../containers/CardActionInjector';
+import './CardSettings.css';
 
-import './UpdateCard.css';
-
-const UpdateCard = ({ dispatch, id }) => {
+const CardSettings = ({ id, deleteCard, updateCard }) => {
   let input;
-
   return (
-    <div>
+    <div className='card-settings'>
       <form
         className='update-card'
         onSubmit={e => {
@@ -16,15 +13,19 @@ const UpdateCard = ({ dispatch, id }) => {
           if (!input.value.trim()) {
             return;
           }
-          dispatch(updateCard(id, input.value));
+          updateCard(id, input.value);
           input.value = '';
         }}
       >
         <input className='input-box' ref={node => (input = node)} />
         <button className='update-bttn'>Update Card</button>
       </form>
+
+      <button className='delete-card-bttn' onClick={() => deleteCard(id)}>
+        Remove
+      </button>
     </div>
   );
 };
 
-export default connect()(UpdateCard);
+export default CardSettings;

@@ -16,14 +16,12 @@ const cards = (
       ];
 
     case UPDATE_CARD:
-      var tempState = state.map(card =>
+      return state.map(card =>
         card.id === action.id ? { ...card, text: action.text } : card
       );
-      return tempState;
 
     case DELETE_CARD:
-      var tempState = state.filter(card => card.id !== action.id);
-      return tempState;
+      return state.filter(card => card.id !== action.id);
     default:
       return state;
   }
