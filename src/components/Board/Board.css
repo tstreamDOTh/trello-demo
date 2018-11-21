@@ -1,10 +1,12 @@
 .board-container {
   padding: 8px;
+  overflow: scroll;
 }
 
 .lists {
-  display: flex;
-  flex-wrap: wrap;
+  display: inline-flex;
+  width: fit-content;
+  overflow: scroll;
 }
 
 @media only screen and (max-width: 733px) {

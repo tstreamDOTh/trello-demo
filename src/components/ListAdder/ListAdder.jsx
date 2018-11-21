@@ -6,9 +6,9 @@ const ListAdder = ({ addList }) => {
   let input;
 
   return (
-    <div>
+    <div className='list-adder'>
       <form
-        className='add-list'
+        className='list-adder-form'
         onSubmit={e => {
           e.preventDefault();
           if (!input.value.trim()) {

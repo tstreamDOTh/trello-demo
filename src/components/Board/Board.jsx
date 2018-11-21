@@ -8,7 +8,6 @@ const ListAdderWithSubscription = ListSubscription(ListAdder);
 
 const Board = ({ lists, cards, deleteCard }) => (
   <div className='board-container'>
-    <ListAdderWithSubscription />
     <div className='lists'>
       {lists.map(list => {
         const filteredCards = cards.filter(card => card.listID === list.listID);
@@ -22,6 +21,7 @@ const Board = ({ lists, cards, deleteCard }) => (
           />
         );
       })}
+      <ListAdderWithSubscription />
     </div>
   </div>
 );
