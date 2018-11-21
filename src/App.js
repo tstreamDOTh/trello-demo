@@ -14,9 +14,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className='bg'>
-          <BoardContainer />
-        </div>
+        <BoardContainer />
       </Provider>
     );
   }
