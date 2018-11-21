@@ -1,4 +1,6 @@
 .card {
+  cursor: -webkit-grab;
+  cursor: grab;
   background: #bc4e9c; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,

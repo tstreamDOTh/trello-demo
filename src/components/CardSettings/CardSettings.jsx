@@ -16,7 +16,11 @@ const CardSettings = ({ id, deleteCard, updateCard }) => {
           input.value = '';
         }}
       >
-        <input className='input-box' ref={node => (input = node)} />
+        <input
+          className='input-box'
+          placeholder='Enter a title...'
+          ref={node => (input = node)}
+        />
         <button className='update-bttn'>Update Card</button>
       </form>
 

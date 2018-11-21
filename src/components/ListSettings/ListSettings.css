@@ -3,6 +3,7 @@
   height: 40px;
 }
 .delete-list-bttn {
+  cursor: pointer;
   opacity: 0.2;
   margin-left: 4px;
   border: none;
@@ -37,6 +38,7 @@
 }
 
 .update-list .update-bttn {
+  cursor: pointer;
   border: none;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;

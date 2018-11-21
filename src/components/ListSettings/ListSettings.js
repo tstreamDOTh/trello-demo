@@ -16,7 +16,11 @@ const ListSettings = ({ listID, updateList, deleteList }) => {
           input.value = '';
         }}
       >
-        <input className='input-box' ref={node => (input = node)} />
+        <input
+          className='input-box'
+          ref={node => (input = node)}
+          placeholder=' Enter the new list name'
+        />
         <button className='update-bttn'>Update </button>
       </form>
 

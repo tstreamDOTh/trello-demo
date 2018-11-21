@@ -21,6 +21,7 @@
 }
 
 .delete-card-bttn {
+  cursor: pointer;
   opacity: 0.2;
   float: right;
   margin: 4px;
@@ -53,6 +54,7 @@
 }
 
 .update-card .update-bttn {
+  cursor: pointer;
   border: none;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
@@ -61,4 +63,9 @@
   color: white;
   font-weight: bold;
   width: calc(100px - 8px);
+}
+
+::placeholder {
+  color: black;
+  opacity: 0.5;
 }
