@@ -1,7 +1,6 @@
 .add-list {
-  width: 120px;
-  margin-top: 8px;
   height: 40px;
+  width: 40%;
 }
 .add-list .input-box {
   border: none;

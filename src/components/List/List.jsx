@@ -1,7 +1,10 @@
 import React from 'react';
-import Card from '../Card/Card.react';
+import Card from '../Card/Card';
 import './List.css';
-import AddCard from '../../containers/AddCardSection/AddCard';
+import CardSubscription from '../../containers/CardSubscription';
+import CardAdder from '../CardAdder/CardAdder';
+
+const AddCardWithSubscription = CardSubscription(CardAdder);
 const List = ({ text, cards, listID, deleteCard }) => (
   <div className='card-list-container'>
     {text}
@@ -14,7 +17,7 @@ const List = ({ text, cards, listID, deleteCard }) => (
       />
     ))}
 
-    <AddCard listID={listID} />
+    <AddCardWithSubscription listID={listID} />
   </div>
 );
 

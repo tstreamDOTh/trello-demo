@@ -1,5 +1,4 @@
 import React from 'react';
-import CardActionInjector from '../../containers/CardActionInjector';
 import './CardSettings.css';
 
 const CardSettings = ({ id, deleteCard, updateCard }) => {

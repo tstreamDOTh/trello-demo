@@ -1,9 +1,5 @@
-import { connect } from 'react-redux';
-import Board from '../components/Board/Board.react';
+import CardSubscription from './CardSubscription';
+import ListSubscription from './ListSubscription';
+import Board from '../components/Board/Board';
 
-const mapStateToProps = state => ({
-  cards: state.cards,
-  lists: state.lists
-});
-
-export default connect(mapStateToProps)(Board);
+export default ListSubscription(CardSubscription(Board));

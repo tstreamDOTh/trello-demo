@@ -1,32 +1,30 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { addList } from '../../actions/index';
 
-import './AddList.css';
+import './CardAdder.css';
 
-const AddList = ({ dispatch }) => {
+const CardAdder = ({ addCard, listID }) => {
   let input;
 
   return (
     <div>
       <form
-        className='add-list'
+        className='add-card'
         onSubmit={e => {
           e.preventDefault();
           if (!input.value.trim()) {
             return;
           }
-          dispatch(addList(input.value));
+          addCard(input.value, listID);
           input.value = '';
         }}
       >
         <input className='input-box' ref={node => (input = node)} />
         <button className='add-bttn' type='submit'>
-          Add New List +
+          Add
         </button>
       </form>
     </div>
   );
 };
 
-export default connect()(AddList);
+export default CardAdder;

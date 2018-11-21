@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 import BoardContainer from './containers/BoardContainer';
 import './App.css';
-import AddList from './containers/AddListSection/AddList';
 
 const store = createStore(
   rootReducer,
@@ -16,7 +15,6 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className='bg'>
-          <AddList />
           <BoardContainer />
         </div>
       </Provider>
