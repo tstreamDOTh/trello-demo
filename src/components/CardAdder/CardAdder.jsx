@@ -18,7 +18,11 @@ const CardAdder = ({ addCard, listID }) => {
           input.value = '';
         }}
       >
-        <input className='input-box' ref={node => (input = node)} />
+        <input
+          className='input-box'
+          ref={node => (input = node)}
+          placeholder='Add another Card'
+        />
         <button className='add-bttn' type='submit'>
           Add
         </button>
