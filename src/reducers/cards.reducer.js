@@ -1,4 +1,11 @@
-import { ADD_CARD, UPDATE_CARD, DELETE_CARD, MOVE_CARD } from '../actions';
+import {
+  ADD_CARD,
+  UPDATE_CARD,
+  DELETE_CARD,
+  MOVE_CARD,
+  DELETE_LIST
+} from '../actions';
+import { request } from 'http';
 
 const cards = (
   state = [{ id: 0, listID: 0, text: 'My first awesome assignment! 🎉' }],
@@ -27,6 +34,9 @@ const cards = (
       return state.map(card =>
         card.id === action.id ? { ...card, listID: action.listID } : card
       );
+
+    case DELETE_LIST:
+      return state.filter(card => card.listID !== action.listID);
     default:
       return state;
   }

@@ -4,8 +4,11 @@ import './List.css';
 import CardSubscription from '../../containers/CardSubscription';
 import CardAdder from '../CardAdder/CardAdder';
 import { DropTarget } from 'react-dnd';
+import ListSubscription from '../../containers/ListSubscription';
+import ListSettings from '../ListSettings/ListSettings';
 
 const AddCardWithSubscription = CardSubscription(CardAdder);
+const ListSettingsWithSubscription = ListSubscription(ListSettings);
 
 const ItemTypes = {
   CARD: 'card'
@@ -33,6 +36,7 @@ const List = ({
 }) =>
   connectDropTarget(
     <div className='card-list-container'>
+      <ListSettingsWithSubscription listID={listID} />
       {text}
       {cards
         .filter(card => card.listID === listID)

@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
-import { addList } from '../actions';
+import { addList, deleteList } from '../actions';
 
 const mapStateToProps = state => ({
   lists: state.lists
 });
 
 const mapDispatchToProps = dispatch => ({
-  addList: text => dispatch(addList(text))
+  addList: text => dispatch(addList(text)),
+  deleteList: listID => dispatch(deleteList(listID))
 });
 
 const ListSubscription = baseComponent => {

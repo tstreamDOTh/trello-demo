@@ -1,4 +1,4 @@
-import { ADD_LIST } from '../actions';
+import { ADD_LIST, DELETE_LIST } from '../actions';
 
 const lists = (state = [{ listID: 0, text: 'Kubric.io' }], action) => {
   switch (action.type) {
@@ -10,6 +10,9 @@ const lists = (state = [{ listID: 0, text: 'Kubric.io' }], action) => {
           text: action.text
         }
       ];
+
+    case DELETE_LIST:
+      return state.filter(list => list.listID !== action.listID);
     default:
       return state;
   }
