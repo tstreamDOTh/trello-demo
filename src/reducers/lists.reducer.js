@@ -1,4 +1,4 @@
-import { ADD_LIST, DELETE_LIST } from '../actions';
+import { ADD_LIST, DELETE_LIST, UPDATE_LIST } from '../actions';
 
 const lists = (state = [{ listID: 0, text: 'Kubric.io' }], action) => {
   switch (action.type) {
@@ -13,6 +13,12 @@ const lists = (state = [{ listID: 0, text: 'Kubric.io' }], action) => {
 
     case DELETE_LIST:
       return state.filter(list => list.listID !== action.listID);
+
+    case UPDATE_LIST:
+      return state.map(list =>
+        list.listID === action.listID ? { ...list, text: action.text } : list
+      );
+
     default:
       return state;
   }

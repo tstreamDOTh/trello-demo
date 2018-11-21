@@ -36,8 +36,16 @@ const List = ({
 }) =>
   connectDropTarget(
     <div className='card-list-container'>
+      <h2>{text}</h2>
       <ListSettingsWithSubscription listID={listID} />
-      {text}
+      {cards.reduce(
+        (total, card) => (card.listID === listID ? ++total : total),
+        0
+      ) === 0 ? (
+        <h4 className='empty-list'>Empty List 📭</h4>
+      ) : (
+        ''
+      )}
       {cards
         .filter(card => card.listID === listID)
         .map(card => (

@@ -1,6 +1,10 @@
+.list-settings {
+  display: flex;
+  height: 40px;
+}
 .delete-list-bttn {
   opacity: 0.2;
-  margin: 4px;
+  margin-left: 4px;
   border: none;
   border-radius: 2px;
   padding: 4px;
@@ -9,9 +13,37 @@
   font-weight: bold;
   transition: opacity 200ms;
   width: auto;
+  height: 100%;
 }
 
 .delete-list-bttn:hover {
   opacity: 1;
   transition: opacity 200ms;
+}
+
+.update-list {
+  width: 80%;
+  height: 100%;
+}
+.update-list .input-box {
+  border: none;
+  background-color: rgba(16, 16, 16, 0.34);
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  color: white;
+  width: calc(100% - 100px);
+  padding: 0px;
+  height: 100%;
+}
+
+.update-list .update-bttn {
+  border: none;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-color: rgba(4, 4, 4, 0.18);
+  color: white;
+  font-weight: bold;
+  padding: 0px;
+  width: calc(100px - 8px);
+  height: 100%;
 }
