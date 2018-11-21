@@ -1,4 +1,4 @@
-let nextCardId = 1;
+const uuidv1 = require('uuid/v1');
 
 export const ADD_CARD = 'ADD_CARD';
 
@@ -7,7 +7,7 @@ export const DELETE_CARD = 'DELETE_CARD';
 
 export const addCard = (text, listID) => ({
   type: ADD_CARD,
-  id: nextCardId++,
+  id: uuidv1(),
   text: text,
   listID: listID
 });
