@@ -5,7 +5,6 @@ import {
   MOVE_CARD,
   DELETE_LIST
 } from '../actions';
-import { request } from 'http';
 
 const cards = (
   state = [{ id: 0, listID: 0, text: 'My first awesome assignment! 🎉' }],

@@ -6,25 +6,10 @@ import CardAdder from '../CardAdder/CardAdder';
 import { DropTarget } from 'react-dnd';
 import ListSubscription from '../../containers/ListSubscription';
 import ListSettings from '../ListSettings/ListSettings';
+import { ItemTypes, columnTarget, listCollect } from '../../draggable';
 
 const AddCardWithSubscription = CardSubscription(CardAdder);
 const ListSettingsWithSubscription = ListSubscription(ListSettings);
-
-const ItemTypes = {
-  CARD: 'card'
-};
-
-const columnTarget = {
-  drop: (props, monitor) => {
-    const droppedCard = monitor.getItem();
-    droppedCard.moveCard(droppedCard.id, props.listID);
-  }
-};
-
-const collect = (connect, monitor) => ({
-  connectDropTarget: connect.dropTarget(),
-  isOver: monitor.isOver()
-});
 
 const List = ({
   text,
@@ -58,11 +43,10 @@ const List = ({
             key={card.id}
           />
         ))}
-
       <AddCardWithSubscription listID={listID} />
     </div>
   );
 
 export default CardSubscription(
-  DropTarget(ItemTypes.CARD, columnTarget, collect)(List)
+  DropTarget(ItemTypes.CARD, columnTarget, listCollect)(List)
 );

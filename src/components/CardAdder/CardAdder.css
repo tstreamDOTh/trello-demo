@@ -25,3 +25,7 @@
   height: 100%;
   width: calc(100px - 8px);
 }
+
+::placeholder {
+  color: aliceblue;
+}

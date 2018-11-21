@@ -3,26 +3,7 @@ import './Card.css';
 import CardSettings from '../CardSettings/CardSettings';
 import CardSubscription from '../../containers/CardSubscription';
 import { DragSource } from 'react-dnd';
-
-const ItemTypes = {
-  CARD: 'card'
-};
-
-const cardSource = {
-  beginDrag: props => {
-    return {
-      id: props.id,
-      moveCard: props.moveCard
-    };
-  }
-};
-
-function collect(connect, monitor) {
-  return {
-    connectDragSource: connect.dragSource(),
-    isDragging: monitor.isDragging()
-  };
-}
+import { ItemTypes, cardSource, cardCollect } from '../../draggable';
 
 const CardSettingsWithSubscription = CardSubscription(CardSettings);
 
@@ -35,4 +16,4 @@ const Card = ({ text, id, connectDragSource }) => {
   );
 };
 
-export default DragSource(ItemTypes.CARD, cardSource, collect)(Card);
+export default DragSource(ItemTypes.CARD, cardSource, cardCollect)(Card);

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './ListAdder.css';
 
 const ListAdder = ({ addList }) => {
