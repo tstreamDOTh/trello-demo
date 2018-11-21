@@ -14,11 +14,14 @@ const store = createStore(
 
 class App extends Component {
   render() {
-    return (
+    return [
+      <h1>
+        Trello<i>like</i>
+      </h1>,
       <Provider store={store}>
         <BoardContainer />
       </Provider>
-    );
+    ];
   }
 }
 
